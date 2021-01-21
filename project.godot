@@ -19,6 +19,10 @@ config/name="It's Not Rocket Science"
 run/main_scene="res://Menus/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[physics]
+
+2d/default_gravity=0
+
 [rendering]
 
 quality/driver/driver_name="GLES2"

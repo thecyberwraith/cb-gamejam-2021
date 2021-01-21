@@ -18,5 +18,6 @@ func _ready():
 		button.text = name
 		button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		button.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		button.connect("pressed", get_tree(), "change_scene", [scene])
 		
 		add_child(button)
