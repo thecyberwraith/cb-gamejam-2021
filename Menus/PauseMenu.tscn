@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Menus/PauseMenuButtons.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.145098, 0.145098, 0.145098, 0.45098 )
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+anchor_left = 0.4
+anchor_top = 0.4
+anchor_right = 0.6
+anchor_bottom = 0.6
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer"]
+margin_right = 264.0
+margin_bottom = 27.0
+size_flags_vertical = 3
+text = "Back to the grid iron"
+
+[node name="Restart" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 31.0
+margin_right = 264.0
+margin_bottom = 58.0
+size_flags_vertical = 3
+text = "I botched this... time to try again."
+
+[node name="Levels" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 62.0
+margin_right = 264.0
+margin_bottom = 89.0
+size_flags_vertical = 3
+text = "Maybe this wasn't the mission for me..."
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 93.0
+margin_right = 264.0
+margin_bottom = 120.0
+size_flags_vertical = 3
+text = "Rage Quit"

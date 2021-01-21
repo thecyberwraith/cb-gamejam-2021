@@ -1,12 +1,17 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Textures/GridBackground.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Level1/Level.gd" type="Script" id=2]
 [ext_resource path="res://Levels/AstronautCamera.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Levels/AstronautHandler.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Menus/PauseMenu.tscn" type="PackedScene" id=5]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="GUI" instance=ExtResource( 5 )]
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -24,4 +29,3 @@ position = Vector2( -148.165, 134.695 )
 position = Vector2( 211.023, -56.1232 )
 
 [node name="AstronautCamera" parent="." instance=ExtResource( 3 )]
-visible = false

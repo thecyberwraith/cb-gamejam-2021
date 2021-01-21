@@ -7,6 +7,6 @@ var handler: AstronautHandler
 func initialize(handler: AstronautHandler):
 	self.handler = handler
 
-func _process(delta):
+func _process(_delta):
 	if handler:
 		self.position = handler.get_current_astronaut_position()
