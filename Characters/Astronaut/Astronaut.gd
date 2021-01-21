@@ -1,11 +1,13 @@
 extends RigidBody2D
 
+class_name Astronaut
+
 var aimed_direction: Vector2
 var force = 5
 func _ready():
 	pass
 
-func _process(_delta):
+func handle_process(_delta):
 	var direction: Vector2 = _get_input_direction()
 	
 	if direction.length_squared() > 0:
