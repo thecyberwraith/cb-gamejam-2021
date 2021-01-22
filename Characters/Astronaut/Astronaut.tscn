@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Characters/Astronaut/astronaut.png" type="Texture" id=1]
 [ext_resource path="res://Characters/Astronaut/Astronaut.gd" type="Script" id=2]
 [ext_resource path="res://Characters/Astronaut/InteractionTracker.gd" type="Script" id=3]
+[ext_resource path="res://Characters/Astronaut/InteractiveTextContainer.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 20.0206
@@ -33,3 +34,26 @@ script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionTracker"]
 shape = SubResource( 2 )
+
+[node name="InteractiveTextContainer" type="PanelContainer" parent="."]
+margin_left = -57.0511
+margin_top = -102.332
+margin_right = 56.9489
+margin_bottom = -61.3317
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InteractiveText" type="Label" parent="InteractiveTextContainer"]
+margin_left = 7.0
+margin_top = 13.0
+margin_right = 107.0
+margin_bottom = 27.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Testing"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
