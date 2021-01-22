@@ -5,7 +5,8 @@ class_name InteractableArea
 onready var shape: CollisionShape2D = get_node("CollisionShape2D")
 
 export var interact_text = 'Interact'
-	
+export var descriptor = 'Item'
+
 func set_interactable(interactable: bool):
 	shape.set_deferred("disabled", !interactable)
 

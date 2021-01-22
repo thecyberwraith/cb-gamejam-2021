@@ -1,3 +1,4 @@
+
 extends RigidBody2D
 
 class_name Item
@@ -19,4 +20,6 @@ func set_active(active: bool) -> void:
 	collider.set_deferred("disabled", !active)
 	interactions.set_interactable(active)
 	visible = active
-	
+
+func get_held_descriptor():
+	return interactions.held_descriptor

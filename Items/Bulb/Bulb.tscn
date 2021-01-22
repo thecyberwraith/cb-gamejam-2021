@@ -26,6 +26,8 @@ shape = SubResource( 1 )
 [node name="ItemInteractableArea" type="Area2D" parent="."]
 script = ExtResource( 2 )
 interact_text = "Grab Bulb"
+descriptor = "bulb"
+held_descriptor = "bulb"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemInteractableArea"]
 position = Vector2( 0, -16 )

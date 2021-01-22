@@ -3,11 +3,9 @@
 [ext_resource path="res://Items/HeldItem.gd" type="Script" id=1]
 [ext_resource path="res://Items/crate.jpg" type="Texture" id=2]
 
-[node name="HeldItem" type="Sprite"]
+[node name="HeldItem" type="Node2D"]
 position = Vector2( 0, -32.5269 )
-texture = ExtResource( 2 )
 script = ExtResource( 1 )
 
-[node name="Position2D" type="Position2D" parent="."]
-position = Vector2( 0, 32.3501 )
-rotation = -1.56023
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )

@@ -11,7 +11,6 @@ func _ready():
 		print('Another error')
 
 func on_area_enter(area) -> void:
-	print('I am detecting...')
 	if not area is InteractableArea:
 		print('It is not interactable')
 		return

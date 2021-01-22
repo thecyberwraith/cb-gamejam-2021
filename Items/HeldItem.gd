@@ -1,22 +1,24 @@
-extends Sprite
+extends "res://Items/ConstantlyInteractable.gd"
 
 class_name HeldItem
+
+onready var sprite = get_node("Sprite")
 
 var original
 var astronaut
 
 func _ready():
-	pass
-
-func initialize(item, a_astronaut):
+	sprite.texture = original.get_sprite_texture()
+	
+func initialize(held_descriptor, item, a_astronaut):
 	astronaut = a_astronaut
-	self.original = item
-	self.texture = item.get_sprite_texture()
+	original = item
 	
 	astronaut.add_child(self)
 	astronaut.move_child(self, 0)
 	
-	self.transform = astronaut.get_mount_transform()
+	transform = astronaut.get_mount_transform()
+	descriptor = held_descriptor
 
 func finish_interaction():
 	original.set_active(true)

@@ -3,6 +3,9 @@ extends InteractableArea
 class_name ItemInteractableArea
 
 const HeldItem = preload("res://Items/HeldItem.tscn")
+
+export var held_descriptor: String = 'Held Item'
+
 var item
 
 func initialize(a_item):
@@ -15,6 +18,6 @@ func on_interact(astronaut) -> HeldItem:
 	item.set_active(false)
 	
 	var held_item = HeldItem.instance()
-	held_item.initialize(item, astronaut)
+	held_item.initialize(held_descriptor, item, astronaut)
 
 	return held_item

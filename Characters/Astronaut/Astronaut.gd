@@ -9,7 +9,7 @@ onready var interaction_text: PanelContainer = get_node("InteractiveTextContaine
 const force = 5
 
 var aimed_direction: Vector2
-var current_interaction: Node2D
+var current_interaction: ConstantlyInteractable
 
 signal on_interactions
 
@@ -21,22 +21,28 @@ func get_mount_transform() -> Transform2D:
 	return mount.transform
 	
 func handle_process(_delta):
+	handle_movement(_delta)
+	handle_interactions()
+
+func handle_movement(_delta):
 	var direction: Vector2 = _get_input_direction()
 	
 	if direction.length_squared() > 0:
 		apply_impulse(Vector2(0,0), direction*force)
-	
+
+func handle_interactions():
 	var next_interactable = interaction_tracker.find_first_active_interactable(self)
 	
 	emit_signal("on_interactions", next_interactable)
 
 	if Input.is_action_just_pressed("ui_select"):
-		if current_interaction != null:
+		if next_interactable != null:
+			# Warning, not sure if we can find ourselves with an interactable that
+			# will try to replace the current while using the current...
+			current_interaction = next_interactable.on_interact(self)
+		elif current_interaction != null:
 			current_interaction.finish_interaction()
 			current_interaction = null
-		elif next_interactable:
-			current_interaction = next_interactable.on_interact(self)
-			print('I interacted with ', next_interactable.interact_text)
 
 func _get_input_direction() -> Vector2:
 	var input_map = {
