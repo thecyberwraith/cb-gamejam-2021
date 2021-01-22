@@ -3,28 +3,12 @@ extends RigidBody2D
 class_name Astronaut
 
 onready var mount: Node2D = get_node("Mount")
-onready var interaction_region: Area2D = get_node("Area2D")
+onready var interaction_tracker: InteractionTracker = get_node("InteractionTracker")
 
 const force = 5
 
-var interactables: Array
 var aimed_direction: Vector2
-var carried_item: Node2D
-
-func _ready():
-	interaction_region.connect("body_entered", self, "set_interaction")
-	interaction_region.connect("body_exited", self, "unset_interaction")
-
-func set_interaction(body):
-	if interactables.find(body) < 0:
-		interactables.append(body)
-	print('There are ', len(interactables), ' interactables now')
-
-func unset_interaction(body):
-	var index = interactables.find(body)
-	if index >= 0:
-		interactables.remove(index)
-	print('There are ', len(interactables), ' interactables left')
+var current_interaction: Node2D
 
 func get_mount_transform() -> Transform2D:
 	return mount.transform
@@ -36,13 +20,16 @@ func handle_process(_delta):
 		apply_impulse(Vector2(0,0), direction*force)
 	
 	if Input.is_action_just_pressed("ui_select"):
-		if carried_item != null:
-			carried_item.finish_interaction()
-		elif len(interactables) > 0:
-			for interactable in interactables:
-				if interactable.has_method('interact'):
-					carried_item = interactable.interact(self)
-					break
+		if current_interaction != null:
+			current_interaction.finish_interaction()
+			current_interaction = null
+		else:
+			var next_interactable = interaction_tracker.find_first_active_interactable(self)
+			
+			if next_interactable:
+				current_interaction = next_interactable.on_interact(self)
+				print('I interacted with ', next_interactable.interact_text)
+				
 
 func _get_input_direction() -> Vector2:
 	var input_map = {

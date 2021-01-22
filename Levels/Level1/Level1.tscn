@@ -24,9 +24,6 @@ texture = ExtResource( 1 )
 
 [node name="Position2D" type="Position2D" parent="Starts"]
 
-[node name="Position2D2" type="Position2D" parent="Starts"]
-position = Vector2( -148.165, 134.695 )
-
 [node name="AstronautCamera" parent="." instance=ExtResource( 3 )]
 
 [node name="Item" parent="." instance=ExtResource( 6 )]

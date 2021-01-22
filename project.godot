@@ -24,16 +24,34 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Items/HeldItem.gd"
 }, {
+"base": "Area2D",
+"class": "InteractableArea",
+"language": "GDScript",
+"path": "res://Items/InteractableArea.gd"
+}, {
+"base": "Area2D",
+"class": "InteractionTracker",
+"language": "GDScript",
+"path": "res://Characters/Astronaut/InteractionTracker.gd"
+}, {
 "base": "RigidBody2D",
 "class": "Item",
 "language": "GDScript",
 "path": "res://Items/Item.gd"
+}, {
+"base": "InteractableArea",
+"class": "ItemInteractableArea",
+"language": "GDScript",
+"path": "res://Items/ItemInteractableArea.gd"
 } ]
 _global_script_class_icons={
 "Astronaut": "",
 "AstronautHandler": "",
 "HeldItem": "",
-"Item": ""
+"InteractableArea": "",
+"InteractionTracker": "",
+"Item": "",
+"ItemInteractableArea": ""
 }
 
 [application]

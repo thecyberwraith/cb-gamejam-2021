@@ -4,8 +4,8 @@ const AstronautHandler = preload("res://Levels/AstronautHandler.tscn")
 
 var handler: AstronautHandler
 
-func initialize(handler: AstronautHandler):
-	self.handler = handler
+func initialize(a_handler: AstronautHandler):
+	handler = a_handler
 
 func _process(_delta):
 	if handler:
