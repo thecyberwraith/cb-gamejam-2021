@@ -18,16 +18,28 @@ _global_script_classes=[ {
 "class": "AstronautHandler",
 "language": "GDScript",
 "path": "res://Levels/AstronautHandler.gd"
+}, {
+"base": "Sprite",
+"class": "HeldItem",
+"language": "GDScript",
+"path": "res://Items/HeldItem.gd"
+}, {
+"base": "RigidBody2D",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Items/Item.gd"
 } ]
 _global_script_class_icons={
 "Astronaut": "",
-"AstronautHandler": ""
+"AstronautHandler": "",
+"HeldItem": "",
+"Item": ""
 }
 
 [application]
 
 config/name="It's Not Rocket Science"
-run/main_scene="res://Menus/MainMenu.tscn"
+run/main_scene="res://Levels/Level1/Level1.tscn"
 config/icon="res://icon.png"
 
 [input]
@@ -37,6 +49,11 @@ ui_switch_astronaut={
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Bumpables"
+2d_physics/layer_2="Interactables"
 
 [physics]
 
