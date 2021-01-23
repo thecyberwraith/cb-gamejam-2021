@@ -10,8 +10,10 @@ radius = 20.0206
 height = 81.085
 
 [sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 32.9845, 61.8997 )
 
 [node name="Astronaut" type="RigidBody2D"]
+mode = 2
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -27,12 +29,13 @@ position = Vector2( -25.2554, 2.24493 )
 rotation = -0.342471
 
 [node name="InteractionTracker" type="Area2D" parent="."]
-position = Vector2( -45.1791, 2.24493 )
+position = Vector2( -0.280685, 0.561245 )
 collision_layer = 3
 collision_mask = 3
 script = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionTracker"]
+position = Vector2( 0.280624, 0.561226 )
 shape = SubResource( 2 )
 
 [node name="InteractiveTextContainer" type="PanelContainer" parent="."]
