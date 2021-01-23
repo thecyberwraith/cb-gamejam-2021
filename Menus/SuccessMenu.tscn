@@ -3,8 +3,10 @@
 [ext_resource path="res://Menus/SuccessMenu.gd" type="Script" id=1]
 
 [node name="SuccessMenu" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -18,13 +20,11 @@ margin_right = 14.0
 margin_bottom = 14.0
 
 [node name="CenterContainer" type="VBoxContainer" parent="PanelContainer"]
-pause_mode = 2
 margin_left = 7.0
 margin_top = 7.0
 margin_right = 416.6
 margin_bottom = 247.0
 alignment = 1
-script = ExtResource( 1 )
 
 [node name="Label" type="Label" parent="PanelContainer/CenterContainer"]
 margin_top = 92.0
