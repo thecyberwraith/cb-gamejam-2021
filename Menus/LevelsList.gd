@@ -3,7 +3,7 @@ extends GridContainer
 onready var back_button: Button = get_node("../BackButton")
 
 const LEVELS_LIST: Array = [
-	[ 'Level 1', 'res://Levels/Level1/Level1.tscn']
+	[ 'Level 1\nRepair that Bulb', 'res://Levels/Level1/Level1.tscn']
 ]
 const MainMenu = "res://Menus/MainMenu.tscn"
 

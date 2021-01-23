@@ -75,7 +75,7 @@ _global_script_class_icons={
 [application]
 
 config/name="It's Not Rocket Science"
-run/main_scene="res://Levels/Level1/Level1.tscn"
+run/main_scene="res://Levels/Level2/Level2.tscn"
 config/icon="res://icon.png"
 
 [input]
@@ -94,6 +94,8 @@ ui_switch_astronaut={
 [physics]
 
 2d/default_gravity=0
+2d/default_linear_damp=0.0
+2d/default_angular_damp=0.0
 
 [rendering]
 
