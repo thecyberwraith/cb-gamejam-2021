@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Levels/Statics/Corridor/Corridor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Textures/wall_gray.jpg" type="Texture" id=2]
+[ext_resource path="res://Items/AirLock/AirLock.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=2]
+resource_name = "OpenLeft"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("LeftDoor:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 90.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "OpenRight"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("RightDoor:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -90.0 ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 7.41096, 92.8596 )
+
+[node name="AirLock" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/OpenLeft = SubResource( 2 )
+anims/OpenRight = SubResource( 3 )
+
+[node name="Corridor" parent="." instance=ExtResource( 1 )]
+
+[node name="LeftDoor" type="KinematicBody2D" parent="."]
+position = Vector2( -246.855, -105.946 )
+
+[node name="Sprite" type="Sprite" parent="LeftDoor"]
+position = Vector2( -1.05945, 105.681 )
+scale = Vector2( 1, 11.8926 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftDoor"]
+position = Vector2( -1.05943, 105.946 )
+shape = SubResource( 1 )
+
+[node name="RightDoor" type="KinematicBody2D" parent="."]
+position = Vector2( 248.974, -105.417 )
+
+[node name="Sprite" type="Sprite" parent="RightDoor"]
+position = Vector2( -1.05945, 105.681 )
+scale = Vector2( 1, 11.8926 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightDoor"]
+position = Vector2( -1.05943, 105.946 )
+shape = SubResource( 1 )
