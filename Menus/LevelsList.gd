@@ -4,7 +4,8 @@ onready var back_button: Button = get_node("../BackButton")
 
 const LEVELS_LIST: Array = [
 	[ 'Repair that Bulb', 'res://Levels/Level1/Level1.tscn'],
-	[ 'Think Fast', 'res://Levels/Level2/Level2.tscn']
+	[ 'Think Fast', 'res://Levels/Level2/Level2.tscn'],
+	[ 'Who draw the short straw?', 'res://Levels/Level3/Level3.tscn']
 ]
 const MainMenu = "res://Menus/MainMenu.tscn"
 
