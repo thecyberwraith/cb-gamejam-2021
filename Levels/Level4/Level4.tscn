@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Items/AirLock/BreakableAirLock.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/Level4/Level4.gd" type="Script" id=2]
+[ext_resource path="res://Levels/LevelCore.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Levels/Statics/DeadEnd/DeadEnd.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Items/Item.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Items/Bulb/Bulb.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Items/Bulb/BulbBase.tscn" type="PackedScene" id=8]
+
+[node name="Level4" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Ship" type="Node2D" parent="."]
+
+[node name="DeadEnd" parent="Ship" instance=ExtResource( 4 )]
+position = Vector2( 5, 0 )
+
+[node name="BreakableAirLock" parent="Ship" instance=ExtResource( 1 )]
+position = Vector2( -505.14, 0 )
+
+[node name="Starts" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="Starts"]
+position = Vector2( -318.294, -1.17441 )
+
+[node name="Item" parent="." instance=ExtResource( 6 )]
+position = Vector2( -637.402, -24.3796 )
+linear_velocity = Vector2( 25, 14 )
+angular_velocity = -6.0
+
+[node name="Bulb" parent="." instance=ExtResource( 7 )]
+position = Vector2( -294.274, -55.406 )
+linear_velocity = Vector2( -5, 10 )
+angular_velocity = 8.0
+
+[node name="BulbBase" parent="." instance=ExtResource( 8 )]
+position = Vector2( 0.339294, -127.439 )
+
+[node name="LevelCore" parent="." instance=ExtResource( 3 )]

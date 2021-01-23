@@ -27,3 +27,6 @@ descriptor = "bulb"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableBulbBaseArea"]
 position = Vector2( 0.280624, -42.9341 )
 shape = SubResource( 1 )
+
+[node name="EjectionPoint" type="Position2D" parent="."]
+position = Vector2( 0.89093, -109.581 )

@@ -1,4 +1,3 @@
-
 extends RigidBody2D
 
 class_name Item
@@ -16,7 +15,6 @@ func get_sprite_texture() -> Texture:
 	return sprite.texture
 
 func set_active(active: bool) -> void:
-	print('Setting active to ', active)
 	collider.set_deferred("disabled", !active)
 	interactions.set_interactable(active)
 	visible = active

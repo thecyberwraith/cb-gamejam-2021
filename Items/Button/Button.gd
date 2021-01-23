@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name InteractableButton
+
 onready var animation: AnimatedSprite = get_node("AnimatedSprite")
 onready var area: ButtonInteractableArea = get_node("ButtonInteractableArea")
 

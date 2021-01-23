@@ -12,12 +12,12 @@ func _ready():
 
 func on_area_enter(area) -> void:
 	if not area is InteractableArea:
-		print('It is not interactable')
+		#print('It is not interactable')
 		return
 		
 	if interactables.find(area) < 0:
 		interactables.append(area)
-	print('There are ', len(interactables), ' interactables now')
+	#print('There are ', len(interactables), ' interactables now')
 
 func on_area_exit(area) -> void:
 	if not area is InteractableArea:
@@ -26,7 +26,7 @@ func on_area_exit(area) -> void:
 	var index = interactables.find(area)
 	if index >= 0:
 		interactables.remove(index)
-	print('There are ', len(interactables), ' interactables left')
+	#print('There are ', len(interactables), ' interactables left')
 
 func find_first_active_interactable(astronaut) -> InteractableArea:
 	for candidate in interactables:

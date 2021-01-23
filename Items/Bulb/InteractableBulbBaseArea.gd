@@ -26,6 +26,7 @@ func can_interact(astronaut):
 func on_interact(astronaut):
 	var held_bulb: HeldItem = astronaut.current_interaction
 	
+	# Place bulb
 	if held_bulb != null:
 		print('Placing bulb')
 		bulb = held_bulb.original
@@ -35,6 +36,7 @@ func on_interact(astronaut):
 		
 		return null
 	else:
+		# Remove bulb
 		emit_signal("on_remove_bulb")
 		var item = HeldItem.instance()
 		item.initialize(bulb.get_held_descriptor(), bulb, astronaut)

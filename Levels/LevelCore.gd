@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name LevelCore
+
 # We expect the parent node to have a "Starts" node with position 2Ds
 onready var starts = get_node("../Starts")
 

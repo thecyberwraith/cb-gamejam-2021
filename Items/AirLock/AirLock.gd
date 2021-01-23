@@ -1,8 +1,10 @@
 extends Node2D
 
+class_name AirLock
+
 onready var left_door: KinematicBody2D = get_node("LeftDoor")
 onready var right_door: KinematicBody2D = get_node("RightDoor")
-onready var button = get_node("Button")
+onready var button: InteractableButton = get_node("Button")
 onready var animator: AnimationPlayer = get_node("AnimationPlayer")
 
 const LEFT_OPEN = "OpenLeft"
