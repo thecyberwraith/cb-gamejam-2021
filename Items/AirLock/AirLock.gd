@@ -2,7 +2,7 @@ extends Node2D
 
 onready var left_door: KinematicBody2D = get_node("LeftDoor")
 onready var right_door: KinematicBody2D = get_node("RightDoor")
-
+onready var button = get_node("Button")
 onready var animator: AnimationPlayer = get_node("AnimationPlayer")
 
 const LEFT_OPEN = "OpenLeft"
@@ -23,6 +23,7 @@ func _ready():
 	else:
 		right_door.rotation_degrees = -90
 
+	button.connect("pressed", self, "activate")
 	animator.connect("animation_finished", self, "on_animation_finished")
 
 func activate() -> void:
@@ -33,6 +34,7 @@ func activate() -> void:
 		animator.play_backwards(RIGHT_OPEN)
 	print("Closing door")
 	state = STATES.CLOSING
+	button.set_enabled(false)
 
 func on_animation_finished(animation):
 	# If we are closing, open the correct door
@@ -46,4 +48,5 @@ func on_animation_finished(animation):
 	elif state == STATES.OPENING:
 		print("Door open. Resting.")
 		state = STATES.FREE
+		button.set_enabled(true)
 		is_left_open = !is_left_open

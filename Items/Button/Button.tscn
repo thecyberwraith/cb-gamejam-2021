@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Items/Button/DisabledButton.png" type="Texture" id=1]
+[ext_resource path="res://Items/Button/ActiveButton.png" type="Texture" id=2]
+[ext_resource path="res://Items/Button/Button.gd" type="Script" id=3]
+[ext_resource path="res://Items/Button/ButtonInteractableArea.gd" type="Script" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "enabled",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "disabled",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 15.2063, 15.3312 )
+
+[node name="Button" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "disabled"
+
+[node name="ButtonInteractableArea" type="Area2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonInteractableArea"]
+shape = SubResource( 2 )
