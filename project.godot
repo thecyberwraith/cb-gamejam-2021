@@ -10,6 +10,16 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node2D",
+"class": "AirLeak",
+"language": "GDScript",
+"path": "res://Levels/Interactables/AirLeak/AirLeak.gd"
+}, {
+"base": "InteractableArea",
+"class": "AirLeakInteractableArea",
+"language": "GDScript",
+"path": "res://Levels/Interactables/AirLeak/AirLeakInteractableArea.gd"
+}, {
+"base": "Node2D",
 "class": "AirLock",
 "language": "GDScript",
 "path": "res://Items/AirLock/AirLock.gd"
@@ -95,6 +105,8 @@ _global_script_classes=[ {
 "path": "res://Levels/LevelCore.gd"
 } ]
 _global_script_class_icons={
+"AirLeak": "",
+"AirLeakInteractableArea": "",
 "AirLock": "",
 "Astronaut": "",
 "AstronautCamera": "",

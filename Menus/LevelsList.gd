@@ -6,7 +6,8 @@ const LEVELS_LIST: Array = [
 	[ 'Repair that Bulb', 'res://Levels/Level1/Level1.tscn'],
 	[ 'Think Fast', 'res://Levels/Level2/Level2.tscn'],
 	[ 'Who drew the short straw?', 'res://Levels/Level3/Level3.tscn'],
-	[ 'Just stay fixed!', 'res://Levels/Level4/Level4.tscn']
+	[ 'Just stay fixed!', 'res://Levels/Level4/Level4.tscn'],
+	[ 'Where is the air going?', 'res://Levels/Level5/Level5.tscn']
 ]
 const MainMenu = "res://Menus/MainMenu.tscn"
 

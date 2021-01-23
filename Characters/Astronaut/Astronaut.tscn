@@ -6,11 +6,11 @@
 [ext_resource path="res://Characters/Astronaut/InteractiveTextContainer.gd" type="Script" id=4]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 20.0206
-height = 81.085
+radius = 24.4492
+height = 73.106
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 32.9845, 61.8997 )
+extents = Vector2( 33.0001, 69.1225 )
 
 [node name="Astronaut" type="RigidBody2D"]
 mode = 2

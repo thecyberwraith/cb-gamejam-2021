@@ -10,7 +10,7 @@ extents = Vector2( 6.31795, 11.3947 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 16.9126, 20.4001 )
 
-[node name="Item" type="RigidBody2D"]
+[node name="Torch" type="RigidBody2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -24,7 +24,6 @@ shape = SubResource( 1 )
 [node name="ItemInteractableArea" type="Area2D" parent="."]
 script = ExtResource( 1 )
 interact_text = "Grab Torch"
-descriptor = "torch"
 held_descriptor = "torch"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemInteractableArea"]
