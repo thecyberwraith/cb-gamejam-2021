@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Textures/GridBackground.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Level1/Level.gd" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Items/Item.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Items/Bulb/Bulb.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Items/Bulb/BulbBase.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Menus/SuccessMenu.tscn" type="PackedScene" id=9]
 
 [node name="Level1" type="Node2D"]
 script = ExtResource( 2 )
@@ -15,6 +16,9 @@ script = ExtResource( 2 )
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="GUI" instance=ExtResource( 5 )]
+visible = false
+
+[node name="SuccessMenu" parent="GUI" instance=ExtResource( 9 )]
 visible = false
 
 [node name="Sprite" type="Sprite" parent="."]
