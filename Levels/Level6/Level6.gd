@@ -18,5 +18,5 @@ func asteroid_contact(state: Physics2DTestMotionResult):
 	var leak = AirLeak.instance()
 	leak.position = state.collision_point
 	leak.rotation = (-1*state.collision_normal).angle()
-	add_child(leak)
+	call_deferred("add_child", leak)
 	leak_created = true
