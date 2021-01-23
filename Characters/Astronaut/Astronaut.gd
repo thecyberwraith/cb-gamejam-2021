@@ -2,7 +2,8 @@ extends RigidBody2D
 
 class_name Astronaut
 
-onready var mount: Node2D = get_node("Mount")
+onready var mount: Node2D = get_node("Sprite/Mount")
+onready var sprite: Sprite = get_node("Sprite")
 onready var interaction_tracker: InteractionTracker = get_node("InteractionTracker")
 onready var interaction_text: PanelContainer = get_node("InteractiveTextContainer")
 
@@ -29,6 +30,8 @@ func handle_movement(_delta):
 	
 	if direction.length_squared() > 0:
 		apply_impulse(Vector2(0,0), direction*force)
+	
+	sprite.flip_h = linear_velocity.x > 0
 
 func handle_interactions():
 	var next_interactable = interaction_tracker.find_first_active_interactable(self)
