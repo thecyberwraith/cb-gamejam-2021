@@ -16,19 +16,21 @@ height = 34.206
 script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -1, -21 )
+position = Vector2( 0.336334, -0.0638885 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, -18 )
+visible = false
+position = Vector2( -0.445465, -0.627472 )
 shape = SubResource( 1 )
 
 [node name="ItemInteractableArea" type="Area2D" parent="."]
+visible = false
 script = ExtResource( 2 )
 interact_text = "Grab Bulb"
 descriptor = "bulb"
 held_descriptor = "bulb"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ItemInteractableArea"]
-position = Vector2( 0, -16 )
+position = Vector2( -0.218201, 0.0910187 )
 shape = SubResource( 2 )

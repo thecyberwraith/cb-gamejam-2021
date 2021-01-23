@@ -10,7 +10,7 @@ signal on_bulb_removed
 func _ready():
 	bulb.visible = false
 	interaction.connect("on_place_bulb", self, "on_bulb_placed_callback")
-	interaction.connect("on_remove_bulb", self, "on_bulb_placed_callback")
+	interaction.connect("on_remove_bulb", self, "on_bulb_removed_callback")
 
 func on_bulb_placed_callback():
 	bulb.visible = true
