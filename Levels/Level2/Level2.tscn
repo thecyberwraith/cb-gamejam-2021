@@ -13,13 +13,13 @@ script = ExtResource( 4 )
 
 [node name="Station" type="Node2D" parent="."]
 
-[node name="AirLock" parent="Station" instance=ExtResource( 7 )]
-position = Vector2( -1020.97, 0.89093 )
-
 [node name="Corridor" parent="Station" instance=ExtResource( 5 )]
 position = Vector2( -509.595, 0.890869 )
 
 [node name="DeadEnd" parent="Station" instance=ExtResource( 6 )]
+
+[node name="AirLock" parent="Station" instance=ExtResource( 7 )]
+position = Vector2( -1020.97, 0.89093 )
 
 [node name="Starts" type="Node2D" parent="."]
 
