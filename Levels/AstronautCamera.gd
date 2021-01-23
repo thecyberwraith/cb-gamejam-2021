@@ -1,6 +1,6 @@
 extends Camera2D
 
-const AstronautHandler = preload("res://Levels/AstronautHandler.tscn")
+class_name AstronautCamera
 
 var handler: AstronautHandler
 
