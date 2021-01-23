@@ -39,7 +39,11 @@ func handle_interactions():
 		if next_interactable != null:
 			# Warning, not sure if we can find ourselves with an interactable that
 			# will try to replace the current while using the current...
-			current_interaction = next_interactable.on_interact(self)
+			var result = next_interactable.on_interact(self)
+			if result != null:
+				if current_interaction != null:
+					print('Error! Attempted to replace a interactable when one was there already!')
+				current_interaction = result
 		elif current_interaction != null:
 			current_interaction.finish_interaction()
 			current_interaction = null
