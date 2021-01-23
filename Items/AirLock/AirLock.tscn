@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Levels/Statics/Corridor/Corridor.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Textures/wall_gray.jpg" type="Texture" id=2]
 [ext_resource path="res://Items/AirLock/AirLock.gd" type="Script" id=3]
 [ext_resource path="res://Items/Button/Button.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Items/AirLock/AirLockDoor.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "OpenLeft"
@@ -54,8 +55,7 @@ position = Vector2( -246.855, -105.946 )
 
 [node name="Sprite" type="Sprite" parent="LeftDoor"]
 position = Vector2( -1.05945, 105.681 )
-scale = Vector2( 1, 11.8926 )
-texture = ExtResource( 2 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftDoor"]
 position = Vector2( -1.05943, 105.946 )
