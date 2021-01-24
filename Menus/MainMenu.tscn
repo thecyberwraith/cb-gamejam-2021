@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Menus/MainButtons.gd" type="Script" id=1]
+[ext_resource path="res://Textures/Main.png" type="Texture" id=2]
+[ext_resource path="res://Levels/Interactables/AirLeak/Particle.png" type="Texture" id=3]
+
+[sub_resource type="Gradient" id=1]
+colors = PoolColorArray( 1, 0.596078, 0.00392157, 0.831373, 1, 0.968627, 0.0117647, 0.14902 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -55,12 +60,36 @@ margin_bottom = 586.0
 size_flags_vertical = 3
 text = "Quit"
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Control" type="CenterContainer" parent="HBoxContainer"]
 margin_left = 208.0
-margin_top = 293.0
 margin_right = 1024.0
-margin_bottom = 307.0
+margin_bottom = 600.0
 size_flags_horizontal = 3
+size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
-text = "It's Not Rocket Science"
-align = 1
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="HBoxContainer/Control"]
+position = Vector2( 222.064, 309.581 )
+rotation = 1.07361
+amount = 40
+texture = ExtResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 15.46
+initial_velocity_random = 0.2
+angular_velocity = 4.0
+angular_velocity_random = 0.2
+color_ramp = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/Control"]
+margin_left = 152.0
+margin_top = 44.0
+margin_right = 664.0
+margin_bottom = 556.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+texture = ExtResource( 2 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
