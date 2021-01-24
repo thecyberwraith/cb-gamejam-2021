@@ -14,10 +14,8 @@ func initialize(held_descriptor, item, a_astronaut):
 	astronaut = a_astronaut
 	original = item
 	
-	astronaut.add_child(self)
-	astronaut.move_child(self, 0)
+	astronaut.mount_node(self)
 	
-	transform = astronaut.get_mount_transform()
 	descriptor = held_descriptor
 
 func finish_interaction():

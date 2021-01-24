@@ -2,7 +2,8 @@ extends RigidBody2D
 
 class_name Astronaut
 
-onready var mount: Node2D = get_node("Sprite/Mount")
+onready var left_mount: Node2D = get_node("Sprite/LeftMount")
+onready var right_mount: Node2D = get_node("Sprite/RightMount")
 onready var sprite: Sprite = get_node("Sprite")
 onready var interaction_tracker: InteractionTracker = get_node("InteractionTracker")
 onready var interaction_text: PanelContainer = get_node("InteractiveTextContainer")
@@ -18,8 +19,22 @@ func _ready():
 	connect("on_interactions", interaction_text, "on_interactions")
 	interaction_text.visible = false
 	
-func get_mount_transform() -> Transform2D:
-	return mount.transform
+func mount_node(mount: Node2D):
+	if linear_velocity.x > 0:
+		right_mount.add_child(mount)
+	else:
+		left_mount.add_child(mount)
+
+func unmount() -> Node2D:
+	var mount: Node2D
+	if left_mount.get_child_count() > 0:
+		mount = left_mount.get_child(0)
+		left_mount.remove_child(mount)
+	else:
+		mount = right_mount.get_child(0)
+		right_mount.remove_child(mount)
+	
+	return mount
 	
 func handle_process(_delta):
 	handle_movement(_delta)
@@ -32,6 +47,15 @@ func handle_movement(_delta):
 		apply_impulse(Vector2(0,0), direction*force)
 	
 	sprite.flip_h = linear_velocity.x > 0
+	
+	if linear_velocity.x > 0 and left_mount.get_child_count() > 0:
+		var mount = left_mount.get_child(0)
+		left_mount.remove_child(mount)
+		right_mount.add_child(mount)
+	if linear_velocity.x < 0 and right_mount.get_child_count() > 0:
+		var mount = right_mount.get_child(0)
+		right_mount.remove_child(mount)
+		left_mount.add_child(mount)
 
 func handle_interactions():
 	var next_interactable = interaction_tracker.find_first_active_interactable(self)
