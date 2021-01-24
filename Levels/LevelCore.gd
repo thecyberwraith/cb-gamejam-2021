@@ -23,7 +23,18 @@ func _process(delta):
 	elapsed_time += delta
 
 func level_success():
-	success_menu.show_results(elapsed_time)
+	var save_file: SaveFile = SaveFile.new()
+	var scene_string: String = get_tree().root.get_child(0).filename
+	var index: int = save_file.get_level_from_scene(scene_string)
+	
+	var best_time: float = save_file.get_level_best_time(index)
+	if best_time < 0 or best_time > elapsed_time:
+		print('New record.')
+		best_time = -1
+		save_file.set_best_time(index, elapsed_time)
+		save_file.save()
+	
+	success_menu.show_results(elapsed_time, best_time)
 
 func get_astronauts():
 	return astronaut_handler.get_children()

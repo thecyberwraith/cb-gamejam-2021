@@ -17,7 +17,7 @@ func share_button():
 
 func populate(a_scene: String, lvl: int, desc: String, best: float):
 	button.disabled = false
-	level.text = "Level %s" % lvl
+	level.text = "Level %s" % (lvl + 1)
 	if best > 0:
 		time.text = "Best time: %s seconds" % best
 	description.text = desc

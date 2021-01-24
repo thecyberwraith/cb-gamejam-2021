@@ -109,6 +109,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Levels/LevelCore.gd"
 }, {
+"base": "Object",
+"class": "Levels",
+"language": "GDScript",
+"path": "res://Menus/LevelsList.gd"
+}, {
+"base": "Object",
+"class": "SaveFile",
+"language": "GDScript",
+"path": "res://Menus/SaveFile.gd"
+}, {
 "base": "Node2D",
 "class": "TimedBulbBase",
 "language": "GDScript",
@@ -140,6 +150,8 @@ _global_script_class_icons={
 "Item": "",
 "ItemInteractableArea": "",
 "LevelCore": "",
+"Levels": "",
+"SaveFile": "",
 "TimedBulbBase": "",
 "Todos": ""
 }

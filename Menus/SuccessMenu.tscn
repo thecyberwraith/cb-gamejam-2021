@@ -27,23 +27,29 @@ margin_bottom = 247.0
 alignment = 1
 
 [node name="Label" type="Label" parent="PanelContainer/CenterContainer"]
-margin_top = 92.0
+margin_top = 83.0
 margin_right = 409.0
-margin_bottom = 106.0
+margin_bottom = 97.0
 text = "Mission Complete"
 align = 1
 
 [node name="Time" type="Label" parent="PanelContainer/CenterContainer"]
-margin_top = 110.0
+margin_top = 101.0
 margin_right = 409.0
-margin_bottom = 124.0
+margin_bottom = 115.0
 text = "Mission Duration: "
 align = 1
 
-[node name="Buttons" type="HBoxContainer" parent="PanelContainer/CenterContainer"]
-margin_top = 128.0
+[node name="Best" type="Label" parent="PanelContainer/CenterContainer"]
+margin_top = 119.0
 margin_right = 409.0
-margin_bottom = 148.0
+margin_bottom = 133.0
+align = 1
+
+[node name="Buttons" type="HBoxContainer" parent="PanelContainer/CenterContainer"]
+margin_top = 137.0
+margin_right = 409.0
+margin_bottom = 157.0
 
 [node name="Return" type="Button" parent="PanelContainer/CenterContainer/Buttons"]
 margin_right = 202.0
