@@ -25,6 +25,6 @@ func _ready():
 		var button = LevelButton.instance()
 		add_child(button)
 		button.populate(scene, i+1, name, -1)
-		button.connect("play_level", get_tree(), "change_scene", [scene])
+		button.connect("play_level", get_tree(), "change_scene")
 		
 
