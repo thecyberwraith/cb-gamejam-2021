@@ -108,6 +108,11 @@ _global_script_classes=[ {
 "class": "LevelCore",
 "language": "GDScript",
 "path": "res://Levels/LevelCore.gd"
+}, {
+"base": "Node2D",
+"class": "TimedBulbBase",
+"language": "GDScript",
+"path": "res://Items/Bulb/TimedBulbBase.gd"
 } ]
 _global_script_class_icons={
 "AirLeak": "",
@@ -129,7 +134,8 @@ _global_script_class_icons={
 "InteractionTracker": "",
 "Item": "",
 "ItemInteractableArea": "",
-"LevelCore": ""
+"LevelCore": "",
+"TimedBulbBase": ""
 }
 
 [application]
