@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bulb_eject.wav-b011ca382e4f84d37d567b7110e4f6eb.sample"
+
+[deps]
+
+source_file="res://Audio/bulb_eject.wav"
+dest_files=[ "res://.import/bulb_eject.wav-b011ca382e4f84d37d567b7110e4f6eb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/ShipTileset.png-df4c6276c37e19bc237a3d2727e9812c.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Levels/TileMap/ShipTileset.png"
+dest_files=[ "res://.import/ShipTileset.png-df4c6276c37e19bc237a3d2727e9812c.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
