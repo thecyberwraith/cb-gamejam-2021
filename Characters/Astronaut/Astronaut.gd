@@ -41,20 +41,20 @@ func unmount() -> Node2D:
 		right_mount.remove_child(mount)
 	
 	return mount
-	
-func handle_process(_delta):
-	handle_movement(_delta)
-	handle_interactions()
 
-func handle_movement(_delta):
-	var direction: Vector2 = _get_input_direction()
+func _process(_delta):
+	# This is just for drawing, not for interacting
+	var proper_flip: bool = sprite.flip_h
 	
-	if direction.length_squared() > 0:
-		apply_impulse(Vector2(0,0), direction*force)
+	if sprite.flip_h and linear_velocity.x < 0:
+		proper_flip = false
+	elif !sprite.flip_h and linear_velocity.x > 0:
+		proper_flip = true
 	
-	sprite.flip_h = linear_velocity.x > 0
+	sprite.flip_h = proper_flip
+	
 	if !empty_handed() and current_interaction.has_method('get_sprite'):
-		current_interaction.get_sprite().flip_h = linear_velocity.x > 0
+		current_interaction.get_sprite().flip_h = proper_flip
 
 	if linear_velocity.x > 0 and left_mount.get_child_count() > 0:
 		var mount = left_mount.get_child(0)
@@ -64,6 +64,17 @@ func handle_movement(_delta):
 		var mount = right_mount.get_child(0)
 		right_mount.remove_child(mount)
 		left_mount.add_child(mount)
+
+func handle_process(_delta):
+	# This is just for interacting, not for drawing
+	handle_movement(_delta)
+	handle_interactions()
+
+func handle_movement(_delta):
+	var direction: Vector2 = _get_input_direction()
+	
+	if direction.length_squared() > 0:
+		apply_impulse(Vector2(0,0), direction*force)
 
 func handle_interactions():
 	var next_interactable = interaction_tracker.find_first_active_interactable(self)
