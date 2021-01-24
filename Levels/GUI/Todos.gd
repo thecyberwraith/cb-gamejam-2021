@@ -8,7 +8,7 @@ const TaskItem = preload("res://Levels/GUI/TaskItem.tscn")
 
 onready var container = get_node("PanelContainer/HBoxContainer/Container")
 
-enum Tasks {BULB=0, LEAK=1, DOOR=2}
+enum Tasks {BULB=0, DOOR=1, LEAK=2}
 
 var current_tasks: Dictionary = {}
 
