@@ -18,8 +18,8 @@ func on_door_repaired():
 	if base.bulb_placed:
 		base.eject_bulb()
 		level_core.get_astronauts()[0].confuse()
-		todos.update_todo(Todos.Tasks.BULB, 0)
-	todos.update_todo(Todos.Tasks.DOOR, 1)
+		todos.set_todo_progress(Todos.Tasks.BULB, 0)
+	todos.set_todo_progress(Todos.Tasks.DOOR, 1)
 
 func on_bulb_placed():
 	if !door_ejected_before:
@@ -28,5 +28,5 @@ func on_bulb_placed():
 		level_core.get_astronauts()[0].confuse()
 		todos.add_todo(Todos.Tasks.DOOR, 1)
 	
-	todos.update_todo(Todos.Tasks.BULB, 1)
+	todos.set_todo_progress(Todos.Tasks.BULB, 1)
 
