@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Levels/LevelCore.gd" type="Script" id=1]
 [ext_resource path="res://Menus/SuccessMenu.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Levels/AstronautHandler.gd" type="Script" id=4]
 [ext_resource path="res://Levels/AstronautCamera.gd" type="Script" id=5]
 [ext_resource path="res://Levels/parallax.jpg" type="Texture" id=6]
+[ext_resource path="res://Levels/GUI/Todos.tscn" type="PackedScene" id=7]
 
 [node name="LevelCore" type="Node2D"]
 script = ExtResource( 1 )
@@ -23,6 +24,9 @@ motion_mirroring = Vector2( 2500, 1500 )
 texture = ExtResource( 6 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Todos" parent="GUI" instance=ExtResource( 7 )]
+visible = false
 
 [node name="PauseMenu" parent="GUI" instance=ExtResource( 3 )]
 visible = false

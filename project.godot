@@ -113,6 +113,11 @@ _global_script_classes=[ {
 "class": "TimedBulbBase",
 "language": "GDScript",
 "path": "res://Items/Bulb/TimedBulbBase.gd"
+}, {
+"base": "Control",
+"class": "Todos",
+"language": "GDScript",
+"path": "res://Levels/GUI/Todos.gd"
 } ]
 _global_script_class_icons={
 "AirLeak": "",
@@ -135,7 +140,8 @@ _global_script_class_icons={
 "Item": "",
 "ItemInteractableArea": "",
 "LevelCore": "",
-"TimedBulbBase": ""
+"TimedBulbBase": "",
+"Todos": ""
 }
 
 [application]

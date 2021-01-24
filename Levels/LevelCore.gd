@@ -7,6 +7,8 @@ onready var starts = get_node("../Starts")
 
 onready var pause_menu = get_node("GUI/PauseMenu")
 onready var success_menu = get_node("GUI/SuccessMenu")
+onready var todos_menu = get_node("GUI/Todos")
+
 onready var camera = get_node("AstronautCamera")
 onready var astronaut_handler = get_node("AstronautHandler")
 
@@ -25,3 +27,6 @@ func level_success():
 
 func get_astronauts():
 	return astronaut_handler.get_children()
+
+func get_todos():
+	return todos_menu
