@@ -49,6 +49,12 @@ func _get_old_data() -> bool:
 		
 	level_array = data[KEY_DATA]
 	
+	while len(level_array) < len(Levels.array):
+		var unlocked: bool = level_array[len(level_array) - 1][KEY_BEST_TIME] != null
+		level_array.append({
+			KEY_UNLOCKED: unlocked,
+			KEY_BEST_TIME: -1
+		}) 
 	return true
 
 func _make_new_data():
