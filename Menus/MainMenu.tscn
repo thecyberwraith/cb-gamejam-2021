@@ -35,26 +35,19 @@ script = ExtResource( 1 )
 
 [node name="LevelsButton" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer"]
 margin_right = 190.0
-margin_bottom = 143.0
+margin_bottom = 192.0
 size_flags_vertical = 3
 text = "Levels"
 
 [node name="CreditsButton" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer"]
-margin_top = 147.0
+margin_top = 196.0
 margin_right = 190.0
-margin_bottom = 291.0
+margin_bottom = 389.0
 size_flags_vertical = 3
 text = "Credits"
 
-[node name="OptionsButton" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer"]
-margin_top = 295.0
-margin_right = 190.0
-margin_bottom = 438.0
-size_flags_vertical = 3
-text = "Options"
-
 [node name="QuitButton" type="Button" parent="HBoxContainer/PanelContainer/VBoxContainer"]
-margin_top = 442.0
+margin_top = 393.0
 margin_right = 190.0
 margin_bottom = 586.0
 size_flags_vertical = 3
