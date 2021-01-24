@@ -10,5 +10,5 @@ func _ready():
 	base.connect("on_bulb_placed", self, "bulb_placed")
 	
 func bulb_placed():
-	level_core.get_todos().update_todo(Todos.Tasks.BULB, 1)
+	level_core.get_todos().set_todo_progress(Todos.Tasks.BULB, 1)
 

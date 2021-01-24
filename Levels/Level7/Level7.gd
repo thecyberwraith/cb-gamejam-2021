@@ -1,15 +1,15 @@
 extends Node2D
 
 onready var level_core: LevelCore = get_node("LevelCore")
-
-var bulbs_down: int = 0
-onready var bulbs_needed: int = len(get_tree().get_nodes_in_group('bases'))
+onready var todos: Todos = level_core.get_todos()
 
 func _ready():
-	for base in get_tree().get_nodes_in_group('bases'):
-		base.connect("net_bulb_change", self, "bulb_changed")
+	var bases = get_tree().get_nodes_in_group('bases')
+	for base in bases:
+		base.connect("net_bulb_placed", self, "net_bulb_placed")
+	
+	todos.connect("all_tasks_complete", level_core, "level_success")
+	todos.add_todo(Todos.Tasks.BULB, len(bases))
 
-func bulb_changed(amount: int):
-	bulbs_down += amount
-	if bulbs_down == bulbs_needed:
-		level_core.level_success()
+func net_bulb_placed(amount: int):
+	todos.delta_todo_progress(Todos.Tasks.BULB, amount)

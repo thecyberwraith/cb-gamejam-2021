@@ -23,11 +23,20 @@ func add_todo(task: int, max_amount: int, start: int = 0):
 		current_tasks[task] = new_task
 	visible = true
 
-func update_todo(task: int, amount: int):
+func set_todo_progress(task: int, amount: int):
 	current_tasks[task].set_progress(amount)
+	_check_for_completion()
 	
+func _check_for_completion():
 	for task in current_tasks:
 		if !current_tasks[task].is_complete():
 			return
 
 	emit_signal("all_tasks_complete")
+
+func delta_todo_progress(task: int, amount: int):
+	current_tasks[task].set_progress(current_tasks[task].current + amount)
+	_check_for_completion()	
+
+func get_todo(task: int):
+	return current_tasks[task]

@@ -8,6 +8,7 @@ onready var interaction: InteractableBulbBaseArea = get_node("InteractableBulbBa
 
 signal on_bulb_placed
 signal on_bulb_removed
+signal net_bulb_placed
 
 var bulb_placed: bool = false
 
@@ -20,16 +21,19 @@ func on_bulb_placed_callback():
 	bulb_placed = true
 	bulb.visible = true
 	emit_signal("on_bulb_placed")
+	emit_signal("net_bulb_placed", 1)
 
 func on_bulb_removed_callback():
 	bulb_placed = false
 	bulb.visible = false
 	emit_signal("on_bulb_removed")
+	emit_signal("net_bulb_placed", -1)
 
 func eject_bulb():
 	bulb_placed = false
 	bulb.visible = false
 	emit_signal("on_bulb_removed")
+	emit_signal("net_bulb_placed", -1)
 	print('Ejecting Bulb')
 
 	interaction.bulb.set_active(true)
