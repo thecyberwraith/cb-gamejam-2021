@@ -2,8 +2,8 @@ extends RigidBody2D
 
 class_name Astronaut
 
-onready var left_mount: Node2D = get_node("Sprite/LeftMount")
-onready var right_mount: Node2D = get_node("Sprite/RightMount")
+onready var left_mount: Node2D = get_node("LeftMount")
+onready var right_mount: Node2D = get_node("RightMount")
 onready var sprite: Sprite = get_node("Sprite")
 onready var interaction_tracker: InteractionTracker = get_node("InteractionTracker")
 onready var interaction_text: PanelContainer = get_node("InteractiveTextContainer")

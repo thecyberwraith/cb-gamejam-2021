@@ -3,7 +3,7 @@
 [ext_resource path="res://Items/AirLock/AirLock.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Levels/Level1/Level1.gd" type="Script" id=2]
 [ext_resource path="res://Levels/LevelCore.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Levels/Statics/DeadEnd/DeadEnd.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Levels/TileMap/ShipMap.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Textures/wall_gray.jpg" type="Texture" id=5]
 [ext_resource path="res://Items/Item.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Items/Bulb/Bulb.tscn" type="PackedScene" id=7]
@@ -12,22 +12,27 @@
 [node name="Level1" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Starts" type="Node2D" parent="."]
+[node name="TileMap" parent="." instance=ExtResource( 4 )]
+tile_data = PoolIntArray( 0, 1, 0, 1, 4, 0 )
 
-[node name="Position2D" type="Position2D" parent="Starts"]
-position = Vector2( 5.99323, 1.49829 )
+[node name="Label2" type="Label" parent="TileMap"]
+margin_left = 149.671
+margin_top = 202.234
+margin_right = 352.671
+margin_bottom = 216.234
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.419608, 0.419608, 0.419608, 1 )
+text = "Interact with Space"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="DeadEnd" parent="." instance=ExtResource( 4 )]
-position = Vector2( 5, 0 )
-
-[node name="Air Lock" parent="." instance=ExtResource( 1 )]
-position = Vector2( -505.923, 0 )
-
-[node name="Label" type="Label" parent="."]
-margin_left = -111.362
-margin_top = -87.3081
-margin_right = 91.6377
-margin_bottom = -73.3081
+[node name="Label" type="Label" parent="TileMap"]
+margin_left = 152.345
+margin_top = 45.4361
+margin_right = 355.345
+margin_bottom = 59.4361
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.419608, 0.419608, 0.419608, 1 )
 text = "Arrows are a good way to move."
@@ -35,14 +40,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="Label" parent="."]
-margin_left = -100.672
-margin_top = 73.0537
-margin_right = 102.328
-margin_bottom = 87.0537
+[node name="Starts" type="Node2D" parent="."]
+
+[node name="Position2D" type="Position2D" parent="Starts"]
+position = Vector2( 210.9, 129.788 )
+
+[node name="Air Lock" parent="." instance=ExtResource( 1 )]
+position = Vector2( -253.798, 128.29 )
+
+[node name="Sprite" type="Sprite" parent="Air Lock"]
+position = Vector2( 0.783051, -9.35439 )
+scale = Vector2( 5.00904, 4.61928 )
+texture = ExtResource( 5 )
+
+[node name="Label3" type="Label" parent="Air Lock"]
+margin_left = -41.9509
+margin_top = -39.5805
+margin_right = 43.0491
+margin_bottom = 25.4195
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0.419608, 0.419608, 0.419608, 1 )
-text = "Interact with Space"
+text = "Everyone
+Needs an
+ESCAPE
+Sometimes"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -54,32 +75,11 @@ linear_velocity = Vector2( 25, 14 )
 angular_velocity = -6.0
 
 [node name="Bulb" parent="." instance=ExtResource( 7 )]
-position = Vector2( 152.066, -17.0973 )
+position = Vector2( 360.537, 129.01 )
 linear_velocity = Vector2( -5, 10 )
 angular_velocity = 8.0
 
 [node name="BulbBase" parent="." instance=ExtResource( 8 )]
-position = Vector2( 0.339355, -128.33 )
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( -370.614, -33.4087 )
-scale = Vector2( 5.00904, 4.61928 )
-texture = ExtResource( 5 )
-
-[node name="Label3" type="Label" parent="."]
-margin_left = -413.348
-margin_top = -63.6348
-margin_right = -328.348
-margin_bottom = 1.36519
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_colors/font_color_shadow = Color( 0.419608, 0.419608, 0.419608, 1 )
-text = "Everyone
-Needs an
-ESCAPE
-Sometimes"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+position = Vector2( 349.572, 0.850555 )
 
 [node name="LevelCore" parent="." instance=ExtResource( 3 )]
