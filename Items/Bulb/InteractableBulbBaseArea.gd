@@ -9,6 +9,8 @@ const HeldItem = preload("res://Items/HeldItem.tscn")
 signal on_place_bulb
 signal on_remove_bulb
 
+onready var place_sound: AudioStreamPlayer2D = get_node("AudioStreamPlayer2D")
+
 func can_interact(astronaut: Astronaut):
 	var base_has_bulb = bulb != null
 	
@@ -21,7 +23,7 @@ func can_interact(astronaut: Astronaut):
 	
 	return false
 
-func on_interact(astronaut):
+func on_interact(astronaut: Astronaut):
 	var held_bulb: HeldItem = astronaut.current_interaction
 	
 	# Place bulb
@@ -31,10 +33,12 @@ func on_interact(astronaut):
 		emit_signal("on_place_bulb")
 		held_bulb.queue_free()
 		interact_text = "Remove Bulb"
-		
+		place_sound.play()
+
 		return null
 	else:
 		# Remove bulb
+		astronaut.confuse()
 		emit_signal("on_remove_bulb")
 		var item = HeldItem.instance()
 		item.initialize(bulb.get_held_descriptor(), bulb, astronaut)

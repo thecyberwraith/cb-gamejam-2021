@@ -36,8 +36,8 @@ func eject_bulb():
 	interaction.bulb.position = $EjectionPoint.global_position
 	var random = RandomNumberGenerator.new()
 	random.randomize()
-	interaction.bulb.angular_velocity = random.randf_range(-10, 10)
-	interaction.bulb.linear_velocity.x = random.randf_range(-5, 5)
-	interaction.bulb.linear_velocity.y = random.randf_range(-5, 5)
+	interaction.bulb.angular_velocity = random.randf_range(-4, 4)
+	interaction.bulb.linear_velocity.x = random.randf_range(-15, 15)
+	interaction.bulb.linear_velocity.y = random.randf_range(-15, 15)
 	interaction.bulb = null
 	interaction.interact_text = "Place Bulb"

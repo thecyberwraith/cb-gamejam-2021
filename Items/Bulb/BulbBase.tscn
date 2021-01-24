@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Items/Bulb/InteractableBulbBaseArea.gd" type="Script" id=1]
 [ext_resource path="res://Items/Bulb/bulb.png" type="Texture" id=2]
 [ext_resource path="res://Items/Bulb/bulbbase.png" type="Texture" id=3]
 [ext_resource path="res://Items/Bulb/BulbBase.gd" type="Script" id=4]
+[ext_resource path="res://Audio/bulb_eject.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 29.6171, 43.0706 )
@@ -23,6 +24,9 @@ texture = ExtResource( 3 )
 script = ExtResource( 1 )
 interact_text = "Place Bulb"
 descriptor = "bulb"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="InteractableBulbBaseArea"]
+stream = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractableBulbBaseArea"]
 position = Vector2( 0.280624, -42.9341 )

@@ -14,6 +14,7 @@ func on_door_repaired():
 	door_ejected_before = true
 	if base.bulb_placed:
 		base.eject_bulb()
+		level_core.get_astronauts()[0].confuse()
 
 func on_bulb_placed():
 	if door_ejected_before and airlock.broken_door == airlock.Door.NONE:
@@ -21,4 +22,5 @@ func on_bulb_placed():
 	else:
 		airlock.break_door(BreakableAirLock.Door.LEFT)
 		door_ejected_before = true
+		level_core.get_astronauts()[0].confuse()
 

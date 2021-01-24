@@ -4,9 +4,15 @@ class_name Astronaut
 
 onready var left_mount: Node2D = get_node("LeftMount")
 onready var right_mount: Node2D = get_node("RightMount")
+
 onready var sprite: Sprite = get_node("Sprite")
+
 onready var interaction_tracker: InteractionTracker = get_node("InteractionTracker")
 onready var interaction_text: PanelContainer = get_node("InteractiveTextContainer")
+
+onready var what_sound: AudioStreamPlayer2D = get_node("Audio/what")
+onready var huh_sound: AudioStreamPlayer2D = get_node("Audio/huh")
+onready var sigh_sound: AudioStreamPlayer2D = get_node("Audio/sigh")
 
 const force = 5
 
@@ -75,6 +81,7 @@ func handle_interactions():
 				current_interaction = result
 		elif current_interaction != null:
 			current_interaction.finish_interaction()
+			exasperate()
 			current_interaction = null
 
 func empty_handed() -> bool:
@@ -101,3 +108,12 @@ func _get_input_direction() -> Vector2:
 		direction = direction.normalized()
 		
 	return direction
+
+func exasperate():
+	sigh_sound.play()
+
+func confuse():
+	if randi() % 2 == 0:
+		what_sound.play()
+	else:
+		huh_sound.play()

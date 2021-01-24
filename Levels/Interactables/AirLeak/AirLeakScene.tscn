@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Levels/Interactables/AirLeak/Particle.png" type="Texture" id=1]
 [ext_resource path="res://Levels/Interactables/AirLeak/AirLeakInteractableArea.gd" type="Script" id=2]
 [ext_resource path="res://Levels/Interactables/AirLeak/AirLeak.gd" type="Script" id=3]
+[ext_resource path="res://Audio/airleak.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.6893, 25.8514 )
@@ -32,3 +33,7 @@ descriptor = "airleak"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AirLeakInteractableArea"]
 position = Vector2( 0, -26.1626 )
 shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+autoplay = true

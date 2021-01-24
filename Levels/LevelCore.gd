@@ -22,3 +22,6 @@ func _process(delta):
 
 func level_success():
 	success_menu.show_results(elapsed_time)
+
+func get_astronauts():
+	return astronaut_handler.get_children()
