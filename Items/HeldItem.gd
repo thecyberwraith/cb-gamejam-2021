@@ -18,6 +18,9 @@ func initialize(held_descriptor, item, a_astronaut):
 	
 	descriptor = held_descriptor
 
+func get_sprite() -> Sprite:
+	return sprite
+
 func finish_interaction():
 	original.set_active(true)
 	original.transform = self.global_transform

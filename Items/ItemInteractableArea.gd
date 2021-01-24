@@ -11,13 +11,13 @@ var item
 func initialize(a_item):
 	item = a_item
 
-func can_interact(astronaut):
-	return astronaut.current_interaction == null
+func can_interact(astronaut: Astronaut):
+	return astronaut.empty_handed()
 
-func on_interact(astronaut) -> HeldItem:
+func on_interact(astronaut: Astronaut) -> HeldItem:
 	item.set_active(false)
 	
-	var held_item = HeldItem.instance()
+	var held_item: HeldItem = HeldItem.instance()
 	held_item.initialize(held_descriptor, item, astronaut)
 
 	return held_item

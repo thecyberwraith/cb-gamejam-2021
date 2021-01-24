@@ -9,16 +9,14 @@ const HeldItem = preload("res://Items/HeldItem.tscn")
 signal on_place_bulb
 signal on_remove_bulb
 
-func can_interact(astronaut):
-	var player_empty_handed = (astronaut.current_interaction == null)
-	var player_has_bulb = (not player_empty_handed) and astronaut.current_interaction.descriptor == 'bulb'
+func can_interact(astronaut: Astronaut):
 	var base_has_bulb = bulb != null
 	
 	# Option 1, there is no bulb in the base, but there is a bulb on the player
-	if player_has_bulb and not base_has_bulb:
+	if astronaut.is_holding('bulb') and not base_has_bulb:
 		return true
 	# Option 2, there is a bulb in the base and the player isn't carrying anything
-	elif player_empty_handed and base_has_bulb:
+	elif astronaut.empty_handed() and base_has_bulb:
 		return true
 	
 	return false

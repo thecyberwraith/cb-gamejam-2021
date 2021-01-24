@@ -47,7 +47,9 @@ func handle_movement(_delta):
 		apply_impulse(Vector2(0,0), direction*force)
 	
 	sprite.flip_h = linear_velocity.x > 0
-	
+	if !empty_handed() and current_interaction.has_method('get_sprite'):
+		current_interaction.get_sprite().flip_h = linear_velocity.x > 0
+
 	if linear_velocity.x > 0 and left_mount.get_child_count() > 0:
 		var mount = left_mount.get_child(0)
 		left_mount.remove_child(mount)
@@ -74,6 +76,12 @@ func handle_interactions():
 		elif current_interaction != null:
 			current_interaction.finish_interaction()
 			current_interaction = null
+
+func empty_handed() -> bool:
+	return current_interaction == null
+
+func is_holding(descriptor: String):
+	return !empty_handed() and current_interaction.descriptor == descriptor
 
 func _get_input_direction() -> Vector2:
 	var input_map = {
