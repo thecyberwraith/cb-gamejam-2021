@@ -34,5 +34,9 @@ const array: Array = [
 	[
 		"It wasn't me.",
 		"res://Levels/Level8/Level8.tscn"
+	],
+	[
+		"We trained for this!",
+		"res://Levels/Level9/Level9.tscn"
 	]
 ]

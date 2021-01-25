@@ -61,18 +61,6 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="HBoxContainer/Control"]
-position = Vector2( 222.064, 309.581 )
-rotation = 1.07361
-amount = 40
-texture = ExtResource( 3 )
-emission_shape = 1
-emission_sphere_radius = 15.46
-initial_velocity_random = 0.2
-angular_velocity = 4.0
-angular_velocity_random = 0.2
-color_ramp = SubResource( 1 )
-
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/Control"]
 margin_left = 152.0
 margin_top = 44.0
@@ -86,3 +74,16 @@ stretch_mode = 4
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="HBoxContainer/Control/TextureRect"]
+show_behind_parent = true
+position = Vector2( 70.064, 265.581 )
+rotation = 1.07361
+amount = 40
+texture = ExtResource( 3 )
+emission_shape = 1
+emission_sphere_radius = 15.46
+initial_velocity_random = 0.2
+angular_velocity = 4.0
+angular_velocity_random = 0.2
+color_ramp = SubResource( 1 )
