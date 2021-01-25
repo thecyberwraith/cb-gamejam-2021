@@ -32,26 +32,36 @@ position = Vector2( -363.961, 108.784 )
 "bulbs",
 ] instance=ExtResource( 1 )]
 position = Vector2( 143.853, 109.191 )
+linear_velocity = Vector2( 3, 4 )
+angular_velocity = 2.0
 
 [node name="Bulb2" parent="." groups=[
 "bulbs",
 ] instance=ExtResource( 1 )]
 position = Vector2( -7.17625, 387.465 )
+linear_velocity = Vector2( 3, 4 )
+angular_velocity = 2.0
 
 [node name="Bulb3" parent="." groups=[
 "bulbs",
 ] instance=ExtResource( 1 )]
 position = Vector2( 129.583, -116.759 )
+linear_velocity = Vector2( 3, 4 )
+angular_velocity = 2.0
 
 [node name="Bulb4" parent="." groups=[
 "bulbs",
 ] instance=ExtResource( 1 )]
 position = Vector2( 395.377, 121.833 )
+linear_velocity = Vector2( 3, 4 )
+angular_velocity = 2.0
 
 [node name="Bulb5" parent="." groups=[
 "bulbs",
 ] instance=ExtResource( 1 )]
 position = Vector2( 4.12756, 134.914 )
+linear_velocity = Vector2( 3, 4 )
+angular_velocity = 2.0
 
 [node name="TimedBulbBase" parent="." groups=[
 "bases",

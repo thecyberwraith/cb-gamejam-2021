@@ -19,16 +19,14 @@ scale = Vector2( 7.37115, 6.72224 )
 texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="TileMap"]
-margin_left = 77.3902
-margin_top = 88.6113
-margin_right = 180.39
-margin_bottom = 170.611
+margin_left = 78.3902
+margin_top = 105.611
+margin_right = 181.39
+margin_bottom = 187.611
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Teamwork
 is
-Z KEY!
-
-(Not by MikeRG)"
+Z KEY!"
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -46,9 +44,13 @@ position = Vector2( 131.455, -123.478 )
 
 [node name="Bulb" parent="." instance=ExtResource( 5 )]
 position = Vector2( 305.336, 102.298 )
+linear_velocity = Vector2( 20, -15 )
+angular_velocity = 3.0
 
 [node name="Bulb2" parent="." instance=ExtResource( 5 )]
 position = Vector2( 296.841, -41.1718 )
+linear_velocity = Vector2( -3, 1 )
+angular_velocity = 1.0
 
 [node name="BulbBase" parent="." instance=ExtResource( 4 )]
 position = Vector2( 410.578, -0.112793 )
